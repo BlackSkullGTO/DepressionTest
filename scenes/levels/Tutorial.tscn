@@ -1,0 +1,150 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://textures/tilesets/Floor_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://textures/tilesets/Walls_interior.tres" type="TileSet" id=2]
+[ext_resource path="res://textures/Modern tiles_Free/Interiors_free_16x16.png" type="Texture" id=3]
+[ext_resource path="res://scenes/misc/Quests.gd" type="Script" id=4]
+[ext_resource path="res://scenes/misc/UI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/characters/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://textures/tilesets/Objects_tileset.tres" type="TileSet" id=7]
+[ext_resource path="res://scenes/misc/Sprite.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/misc/Quest.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/misc/Quest_Change_Sex.gd" type="Script" id=10]
+[ext_resource path="res://scenes/misc/Quest_Change_Visibility.gd" type="Script" id=11]
+[ext_resource path="res://textures/misc/tutorial.png" type="Texture" id=12]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 240, 80, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 192, 848, 16, 48 )
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 136.092
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 110.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 79.5, 2209.75 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 80.5, 2200.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 1376, 91 )
+
+[node name="Pattern_Scene" type="Node2D"]
+
+[node name="Sprite2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 458, 1098 )
+rotation = 1.89525
+texture = SubResource( 1 )
+
+[node name="Sprite3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 683, 1742 )
+rotation = 1.15406
+texture = SubResource( 1 )
+
+[node name="Sprite4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 700, 2546 )
+rotation = 1.85927
+texture = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1989, 3154 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 12 )
+
+[node name="floor" type="TileMap" parent="."]
+scale = Vector2( 10, 10 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65531, 4, 65537, 65532, 4, 65537, 65533, 4, 65537, 65534, 4, 65537, 65535, 4, 65537, 0, 4, 65537, 1, 4, 65537, 2, 4, 65537, 3, 4, 65537, 4, 4, 65537, 5, 4, 65537, 6, 4, 65537, 7, 4, 65537, 8, 4, 65537, 9, 4, 65537, 10, 4, 65537, 11, 4, 65537, 12, 4, 65537, 13, 4, 65537, 14, 4, 65537, 15, 4, 65537, 16, 4, 65537, 17, 4, 65537, 131067, 4, 65537, 131068, 4, 65537, 131069, 4, 65537, 131070, 4, 65537, 131071, 4, 65537, 65536, 4, 65537, 65537, 4, 65537, 65538, 4, 65537, 65539, 4, 65537, 65540, 4, 65537, 65541, 4, 65537, 65542, 4, 65537, 65543, 4, 65537, 65544, 4, 65537, 65545, 4, 65537, 65546, 4, 65537, 65547, 4, 65537, 65548, 4, 65537, 65549, 4, 65537, 65550, 4, 65537, 65551, 4, 65537, 65552, 4, 65537, 65553, 4, 65537, 196603, 4, 65537, 196604, 4, 65537, 196605, 4, 65537, 196606, 4, 65537, 196607, 4, 65537, 131072, 4, 65537, 131073, 4, 65537, 131074, 4, 65537, 131076, 4, 65537, 131077, 4, 65537, 131078, 4, 65537, 131080, 4, 65537, 131081, 4, 65537, 131082, 4, 65537, 131083, 4, 65537, 131084, 4, 65537, 131085, 4, 65537, 131086, 4, 65537, 131087, 4, 65537, 131088, 4, 65537, 131089, 4, 65537, 262140, 4, 65537, 262141, 4, 65537, 262143, 4, 65537, 196608, 4, 65537, 196609, 4, 65537, 196611, 4, 65537, 196615, 4, 65537, 196618, 4, 65537, 196620, 4, 65537, 196621, 4, 65537, 196623, 4, 65537, 196624, 4, 65537, 327678, 4, 65537, 262145, 4, 65537, 262147, 4, 65537, 262149, 4, 65537, 262153, 4, 65537, 262154, 4, 65537, 262156, 4, 65537, 262157, 4, 65537, 262158, 4, 65537, 262159, 4, 65537, 262160, 4, 65537, 393215, 4, 65537, 327684, 4, 65537, 327686, 4, 65537, 327687, 4, 65537, 327691, 4, 65537, 327692, 4, 65537, 327693, 4, 65537, 327695, 4, 65537, 393221, 4, 65537, 393222, 4, 65537, 393224, 4, 65537, 458756, 4, 65537, 458761, 4, 65537 )
+
+[node name="walls" type="TileMap" parent="."]
+scale = Vector2( 10, 10 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -65541, 8, 1, -65540, 8, 1, -65539, 8, 1, -65538, 8, 1, -65537, 8, 1, -131072, 8, 1, -131071, 8, 1, -131070, 8, 1, -131069, 8, 1, -131068, 8, 1, -131067, 8, 1, -131066, 8, 1, -131065, 8, 1, -131064, 8, 1, -131063, 8, 1, -131062, 8, 1, -131061, 8, 1, -131060, 8, 1, -131059, 8, 1, -131058, 8, 1, -131057, 8, 1, -131056, 8, 1, -131055, 8, 1, -5, 8, 65537, -4, 8, 65537, -3, 8, 65537, -2, 8, 65537, -1, 8, 65537, -65536, 8, 65537, -65535, 8, 65537, -65534, 8, 65537, -65533, 8, 65537, -65532, 8, 65537, -65531, 8, 65537, -65530, 8, 65537, -65529, 8, 65537, -65528, 8, 65537, -65527, 8, 65537, -65526, 8, 65537, -65525, 8, 65537, -65524, 8, 65537, -65523, 8, 65537, -65522, 8, 65537, -65521, 8, 65537, -65520, 8, 65537, -65519, 8, 65537 )
+
+[node name="objects" type="TileMap" parent="."]
+scale = Vector2( 10, 10 )
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -131067, 17, 0 )
+
+[node name="level" type="YSort" parent="."]
+
+[node name="Player" parent="level" instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 1142, 3979 )
+
+[node name="quests" type="YSort" parent="level"]
+script = ExtResource( 4 )
+
+[node name="start_quest" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( -996, 1298 )
+dialogs_json = "res://jsons/Tutorial/tutorial_start_quest.json"
+activation_type = 2
+deactivation_type = 2
+hided = true
+
+[node name="middle_quest" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( 1141, 3494 )
+dialogs_json = "res://jsons/Tutorial/tutorial_middle_quest.json"
+activation_type = 1
+deactivation_type = 2
+hided = true
+
+[node name="last_quest" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( 392, 3735 )
+dialogs_json = "res://jsons/Tutorial/tutorial_last_quest.json"
+hided = true
+
+[node name="Sprite" parent="level/quests/last_quest" instance=ExtResource( 8 )]
+position = Vector2( 0, -148 )
+texture = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/quests/last_quest"]
+shape = SubResource( 6 )
+
+[node name="to_the_game_quest" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( 884, -26 )
+dialogs_json = "res://jsons/Tutorial/to_the_game.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/quests/to_the_game_quest"]
+shape = SubResource( 7 )
+
+[node name="change_sex" parent="level/quests" instance=ExtResource( 9 )]
+script = ExtResource( 10 )
+player_path = NodePath("../../Player")
+
+[node name="show_player" parent="level/quests" instance=ExtResource( 9 )]
+script = ExtResource( 11 )
+object_path = NodePath("../../Player")
+
+[node name="Sprite" parent="level" instance=ExtResource( 8 )]
+position = Vector2( 876, -156 )
+rotation = -0.490883
+
+[node name="UI" parent="." instance=ExtResource( 5 )]
+
+[node name="Borders" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders"]
+position = Vector2( -243.5, 2154.25 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders"]
+position = Vector2( 2480, 2187.5 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders"]
+position = Vector2( 1139, 4287 )
+shape = SubResource( 4 )

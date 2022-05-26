@@ -1,0 +1,177 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://textures/tilesets/Floor_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://textures/tilesets/Walls_interior.tres" type="TileSet" id=2]
+[ext_resource path="res://textures/tilesets/Objects_tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://scenes/misc/Quests.gd" type="Script" id=4]
+[ext_resource path="res://scenes/misc/UI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/characters/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/characters/NPC.tscn" type="PackedScene" id=7]
+[ext_resource path="res://textures/Modern tiles_Free/Someone.png" type="Texture" id=8]
+[ext_resource path="res://scenes/misc/Quest.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 578.5, 73.75 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 135.181
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 97.0206
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 90.2441
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 95.6347
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 104.752
+
+[node name="Pattern_Scene" type="Node2D"]
+
+[node name="floor" type="TileMap" parent="."]
+scale = Vector2( 10, 10 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -131082, 3, 0, -131081, 3, 1, -131080, 3, 1, -131079, 3, 1, -131078, 3, 1, -131077, 3, 1, -131076, 3, 1, -131075, 3, 1, -131074, 3, 1, -131073, 3, 1, -196608, 3, 1, -196607, 3, 1, -196606, 3, 1, -196605, 3, 1, -196604, 3, 1, -196603, 3, 1, -196602, 3, 1, -196601, 3, 1, -196600, 3, 1, -196599, 3, 1, -196598, 3, 1, -196597, 3, 1, -196596, 3, 1, -65546, 3, 65536, -65545, 3, 65537, -65544, 3, 65537, -65543, 3, 65537, -65542, 3, 65537, -65541, 3, 65537, -65540, 3, 65537, -65539, 3, 65537, -65538, 3, 65537, -65537, 3, 65537, -131072, 3, 65537, -131071, 3, 65537, -131070, 3, 65537, -131069, 3, 65537, -131068, 3, 65537, -131067, 3, 65537, -131066, 3, 65537, -131065, 3, 65537, -131064, 3, 65537, -131063, 3, 65537, -131062, 3, 65537, -131061, 3, 65537, -131060, 3, 65537, -10, 3, 65536, -9, 3, 65537, -8, 3, 65537, -7, 3, 65537, -6, 3, 65537, -5, 3, 65537, -4, 3, 65537, -3, 3, 65537, -2, 3, 65537, -1, 3, 65537, -65536, 3, 65537, -65535, 3, 65537, -65534, 3, 65537, -65533, 3, 65537, -65532, 3, 65537, -65531, 3, 65537, -65530, 3, 65537, -65529, 3, 65537, -65528, 3, 65537, -65527, 3, 65537, -65526, 3, 65537, -65525, 3, 65537, -65524, 3, 65537, 65531, 3, 65536, 65532, 3, 65537, 65533, 3, 65537, 5, 3, 65536, 6, 3, 65537, 7, 3, 65537, 131067, 3, 65536, 131068, 3, 65537, 131069, 3, 65537, 65541, 3, 65536, 65542, 3, 65537, 65543, 3, 65537, 196603, 3, 65536, 196604, 3, 65537, 196605, 3, 65537, 131077, 3, 65536, 131078, 3, 65537, 131079, 3, 65537, 262139, 3, 65536, 262140, 3, 65537, 262141, 3, 65537, 196613, 3, 65536, 196614, 3, 65537, 196615, 3, 65537, 327670, 3, 0, 327671, 3, 1, 327672, 3, 1, 327673, 3, 1, 327674, 3, 1, 327675, 3, 2, 327676, 3, 65537, 327677, 3, 65537, 327678, 3, 1, 327679, 3, 1, 262144, 3, 1, 262145, 3, 1, 262146, 3, 1, 262147, 3, 1, 262148, 3, 1, 262149, 3, 2, 262150, 3, 65537, 262151, 3, 65537, 262152, 3, 1, 262153, 3, 1, 262154, 3, 1, 262155, 3, 1, 262156, 3, 1, 393206, 3, 65536, 393207, 3, 65537, 393208, 3, 65537, 393209, 3, 65537, 393210, 3, 65537, 393211, 3, 65537, 393212, 3, 65537, 393213, 3, 65537, 393214, 3, 65537, 393215, 3, 65537, 327680, 3, 65537, 327681, 3, 65537, 327682, 3, 65537, 327683, 3, 65537, 327684, 3, 65537, 327685, 3, 65537, 327686, 3, 65537, 327687, 3, 65537, 327688, 3, 65537, 327689, 3, 65537, 327690, 3, 65537, 327691, 3, 65537, 327692, 3, 65537, 458742, 3, 65536, 458743, 3, 65537, 458744, 3, 65537, 458745, 3, 65537, 458746, 3, 65537, 458747, 3, 65537, 458748, 3, 65537, 458749, 3, 65537, 458750, 3, 65537, 458751, 3, 65537, 393216, 3, 65537, 393217, 3, 65537, 393218, 3, 65537, 393219, 3, 65537, 393220, 3, 65537, 393221, 3, 65537, 393222, 3, 65537, 393223, 3, 65537, 393224, 3, 65537, 393225, 3, 65537, 393226, 3, 65537, 393227, 3, 65537, 393228, 3, 65537, 524286, 3, 65536, 524287, 3, 65537, 458752, 3, 65537, 458753, 3, 65537, 458754, 3, 65537, 458755, 3, 65537, 458756, 3, 65537, 524288, 3, 65536, 524289, 3, 65537, 524290, 3, 65537, 589824, 3, 65536, 589825, 3, 65537, 589826, 3, 65537, 655360, 3, 65536, 655361, 3, 65537, 655362, 3, 65537 )
+
+[node name="walls" type="TileMap" parent="."]
+scale = Vector2( 10, 10 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -262155, 15, 65542, -262154, 14, 1, -262153, 14, 1, -262152, 14, 1, -262151, 14, 1, -262150, 14, 1, -262149, 14, 1, -262148, 14, 1, -262147, 14, 1, -262146, 14, 1, -262145, 14, 1, -327680, 14, 1, -327679, 14, 1, -327678, 14, 1, -327677, 14, 1, -327676, 14, 1, -327675, 14, 1, -327674, 14, 1, -327673, 14, 1, -327672, 14, 1, -327671, 14, 1, -327670, 14, 1, -327669, 14, 1, -327668, 14, 1, -327667, 15, 65544, -196619, 15, 131078, -196618, 14, 65537, -196617, 14, 65537, -196616, 14, 65537, -196615, 14, 65537, -196614, 14, 65537, -196613, 14, 65537, -196612, 14, 65537, -196611, 14, 65537, -196610, 14, 65537, -196609, 14, 65537, -262144, 14, 65537, -262143, 14, 65537, -262142, 14, 65537, -262141, 14, 65537, -262140, 14, 65537, -262139, 14, 65537, -262138, 14, 65537, -262137, 14, 65537, -262136, 14, 65537, -262135, 14, 65537, -262134, 14, 65537, -262133, 14, 65537, -262132, 14, 65537, -262131, 15, 131080, -131083, 15, 131078, -196595, 15, 131080, -65547, 15, 131078, -131059, 15, 131080, -11, 15, 131078, -65523, 15, 131080, 65525, 15, 196614, 65526, 15, 196615, 65527, 15, 196615, 65528, 15, 196615, 65529, 15, 196615, 65530, 15, 65540, 65534, 15, 65541, 65535, 15, 196615, 0, 15, 196615, 1, 15, 196615, 2, 15, 196615, 3, 15, 196615, 4, 15, 65540, 8, 15, 65541, 9, 15, 196615, 10, 15, 196615, 11, 15, 196615, 12, 15, 196615, 13, 15, 196616, 131066, 15, 131078, 131070, 15, 131080, 65540, 15, 131078, 65544, 15, 131080, 196597, 15, 65542, 196598, 14, 1, 196599, 14, 1, 196600, 14, 1, 196601, 14, 1, 196602, 14, 2, 196606, 14, 0, 196607, 14, 1, 131072, 14, 1, 131073, 14, 1, 131074, 14, 1, 131075, 14, 1, 131076, 14, 2, 131080, 14, 0, 131081, 14, 1, 131082, 14, 1, 131083, 14, 1, 131084, 14, 1, 131085, 15, 65544, 262133, 15, 131078, 262134, 14, 65537, 262135, 14, 65537, 262136, 14, 65537, 262137, 14, 65537, 262138, 14, 65538, 262142, 14, 65536, 262143, 14, 65537, 196608, 14, 65537, 196609, 14, 65537, 196610, 14, 65537, 196611, 14, 65537, 196612, 14, 65538, 196616, 14, 65536, 196617, 14, 65537, 196618, 14, 65537, 196619, 14, 65537, 196620, 14, 65537, 196621, 15, 131080, 327669, 15, 131078, 262157, 15, 131080, 393205, 15, 131078, 327693, 15, 131080, 458741, 15, 131078, 393229, 15, 131080, 524277, 15, 196614, 524278, 15, 196615, 524279, 15, 196615, 524280, 15, 196615, 524281, 15, 196615, 524282, 15, 196615, 524283, 15, 196615, 524284, 15, 196615, 524285, 15, 65540, 458757, 15, 65541, 458758, 15, 196615, 458759, 15, 196615, 458760, 15, 196615, 458761, 15, 196615, 458762, 15, 196615, 458763, 15, 196615, 458764, 15, 196615, 458765, 15, 196616, 589821, 15, 196614, 589822, 15, 196615, 589823, 15, 65540, 524291, 15, 65541, 524292, 15, 196615, 524293, 15, 196616, 655359, 15, 131078, 589827, 15, 131080, 720895, 15, 131078, 655363, 15, 131080, 786431, 15, 196614, 720896, 15, 196615, 720897, 15, 196615, 720898, 15, 196615, 720899, 15, 196616 )
+
+[node name="objects" type="TileMap" parent="."]
+scale = Vector2( 10, 10 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -262153, 18, 0, -262152, 17, 0, -262148, 17, 0, -262147, 18, 0, -327679, 17, 0, -327678, 18, 0, -327675, 18, 0, -327674, 17, 0, -327670, 17, 0, -327669, 18, 0, 196599, 18, 0, 196600, 17, 0, 131073, 17, 0, 131074, 18, 0, 131081, 18, 0, 131082, 17, 0, 262134, 15, 0, 262143, 15, 0, 196611, 15, 0, 196620, 15, 0, 655392, 1, 0 )
+
+[node name="level" type="YSort" parent="."]
+
+[node name="player" parent="level" instance=ExtResource( 6 )]
+position = Vector2( 251, 1720 )
+
+[node name="quests" type="YSort" parent="level"]
+script = ExtResource( 4 )
+
+[node name="start_quest" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( -242, 1468 )
+dialogs_json = "res://jsons/ActuallyAGame/start_quest.json"
+activation_type = 2
+deactivation_type = 2
+hided = true
+
+[node name="ohellothere" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( 273, 953 )
+dialogs_json = "res://jsons/ActuallyAGame/ohellothere.json"
+activation_type = 1
+deactivation_type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/quests/ohellothere"]
+position = Vector2( -16, 29.25 )
+shape = SubResource( 1 )
+
+[node name="man" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( 1167, 128 )
+dialogs_json = "res://jsons/ActuallyAGame/man.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/quests/man"]
+position = Vector2( -2, 98 )
+shape = SubResource( 2 )
+
+[node name="friend" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( 240, -537 )
+dialogs_json = "res://jsons/ActuallyAGame/friend.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/quests/friend"]
+position = Vector2( 4, 58 )
+shape = SubResource( 3 )
+
+[node name="plant" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( -74, 696 )
+dialogs_json = "res://jsons/ActuallyAGame/plant.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/quests/plant"]
+shape = SubResource( 4 )
+
+[node name="plant2" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( -1507, 696 )
+dialogs_json = "res://jsons/ActuallyAGame/plant.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/quests/plant2"]
+shape = SubResource( 4 )
+
+[node name="plant3" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( 558, 699 )
+dialogs_json = "res://jsons/ActuallyAGame/plant.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/quests/plant3"]
+shape = SubResource( 4 )
+
+[node name="plant4" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( 1998, 706 )
+dialogs_json = "res://jsons/ActuallyAGame/plant.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/quests/plant4"]
+shape = SubResource( 4 )
+
+[node name="noonehome" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( -1200, 640 )
+dialogs_json = "res://jsons/ActuallyAGame/noonehome.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/quests/noonehome"]
+shape = SubResource( 5 )
+
+[node name="noonehome2" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( 236, 640 )
+dialogs_json = "res://jsons/ActuallyAGame/noonehome.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/quests/noonehome2"]
+shape = SubResource( 5 )
+
+[node name="noonehome3" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( 1686, 640 )
+dialogs_json = "res://jsons/ActuallyAGame/noonehome.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/quests/noonehome3"]
+shape = SubResource( 5 )
+
+[node name="noonehome4" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( 1686, -487 )
+dialogs_json = "res://jsons/ActuallyAGame/noonehome.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/quests/noonehome4"]
+shape = SubResource( 5 )
+
+[node name="noonehome5" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( 1037, -487 )
+dialogs_json = "res://jsons/ActuallyAGame/noonehome.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/quests/noonehome5"]
+shape = SubResource( 5 )
+
+[node name="noonehome6" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( -554, -487 )
+dialogs_json = "res://jsons/ActuallyAGame/noonehome.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/quests/noonehome6"]
+shape = SubResource( 5 )
+
+[node name="docoff" parent="level/quests" instance=ExtResource( 9 )]
+position = Vector2( -1200, -558 )
+dialogs_json = "res://jsons/ActuallyAGame/docoff.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/quests/docoff"]
+position = Vector2( 0, 70 )
+shape = SubResource( 6 )
+
+[node name="NPC" parent="level" instance=ExtResource( 7 )]
+position = Vector2( 1170, 263 )
+_sprite = ExtResource( 8 )
+
+[node name="UI" parent="." instance=ExtResource( 5 )]

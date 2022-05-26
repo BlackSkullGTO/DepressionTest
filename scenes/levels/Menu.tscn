@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/dialog.tres" type="DynamicFont" id=1]
+[ext_resource path="res://textures/menu/Меню.png" type="Texture" id=2]
+[ext_resource path="res://scenes/levels/Menu.gd" type="Script" id=4]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_neighbour_top = NodePath("new_game")
+focus_neighbour_bottom = NodePath("quit")
+focus_mode = 2
+script = ExtResource( 4 )
+
+[node name="Меню" type="TextureRect" parent="."]
+texture = ExtResource( 2 )
+
+[node name="new_game" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -67.0
+margin_top = -25.0
+margin_right = 48.0
+margin_bottom = 24.0
+focus_neighbour_left = NodePath("../quit")
+focus_neighbour_top = NodePath("../quit")
+custom_colors/font_color_focus = Color( 0.333333, 0.333333, 0.333333, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.270588, 0.270588, 0.270588, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Играть"
+flat = true
+
+[node name="quit" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 453.0
+margin_top = -268.0
+margin_right = 554.0
+margin_bottom = -219.0
+focus_neighbour_bottom = NodePath("../new_game")
+custom_colors/font_color_focus = Color( 0.333333, 0.333333, 0.333333, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.270588, 0.270588, 0.270588, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Выход"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

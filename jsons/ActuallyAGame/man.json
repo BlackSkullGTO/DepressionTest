@@ -1,0 +1,244 @@
+[
+    {
+        "switch": [
+            {
+                "variable": "friend_flag", "equal": "1", "jump": "1"
+            }
+        ],
+        "default-jump": "7"
+    },
+    {
+        "switch": [
+            {
+                "variable": "keys_flag", "equal": "1", "jump": "1"
+            }
+        ],
+        "default-jump": "4"
+    },
+    {
+        "name": "Мужчина",
+        "text": "О, ты нашел ключики? Похожи на ключи моего другана."
+    },
+    {
+        "name": "Мужчина",
+        "text": "Я тебе показывал где он живет. Верни ключи ему."
+    },
+    {
+        "return": "1"
+    },
+    {
+        "name": "Мужчина",
+        "text": "Давай-давай. Иди. У тебя дела. У меня тоже вон..."
+    },
+    {
+        "return": "1"
+    },
+    {
+        "name": "Мужчина",
+        "text": "Чо нада?"
+    },
+    {
+        "options": [
+            {
+                "label": "Извините, вы не подскажете где тут доктор?", "value": "2"
+            },
+            {
+                "label": "Ничо-о-о не нада-а-а.", "value": "1"
+            },
+            {
+                "label": "Прошу прощения, я обознался.", "value": "0"
+            }
+        ],
+        "variable-set": "flag1"
+    },
+    {
+        "switch": [
+            {
+                "variable": "flag1", "equal": "2", "jump": "3"
+            },
+            {
+                "variable": "flag1", "equal": "1", "jump": "19"
+            },
+            {
+                "variable": "flag1", "equal": "0", "jump": "1"
+            }
+        ]
+    },
+    {
+        "name": "Мужчина",
+        "text": "Ну ладна..."
+    },
+    {
+        "return": "1"
+    },
+    {
+        "name": "Мужчина",
+        "text": "Я точна не зна-а-аю, малыш. Но я точна знаю того, кто знает. Хошь покажу?"
+    },
+    {
+        "options": [
+            {
+                "label": "Давайте", "value": "1"
+            },
+            {
+                "label": "Прошу прощения, я обознался.", "value": "0"
+            }
+        ],
+        "variable-set": "flag1"
+    },
+    {
+        "switch": [
+            {
+                "variable": "flag1", "equal": "1", "jump": "1"
+            },
+            {
+                "variable": "flag1", "equal": "0", "jump": "-4"
+            }
+        ]
+    },
+    {
+        "text": "Мужчина показывает на одну из дверей."
+    },
+    {
+        "quest": "friend",
+        "marker": "1"
+    },
+    {
+        "name": "Мужчина",
+        "text": "Вон тама есть мой друган. Он знает."
+    },
+    {
+        "switch": [
+            {
+                "variable": "name_tutorial_flag", "equal": "1", "jump": "3"
+            },
+            {
+                "variable": "name_tutorial_flag", "equal": "2", "jump": "5"
+            }
+        ],
+        "default-jump": "1"
+    },
+    {
+        "name": "Игрок",
+        "text": "Спасибо."
+    },
+    {
+        "jump": "4"
+    },
+    {
+        "name": "[name_tutorial]",
+        "text": "Спасибо."
+    },
+    {
+        "jump": "2"
+    },
+    {
+        "name": "Программист",
+        "text": "Спасибо."
+    },
+    {
+        "name": "Мужчина",
+        "text": "Давай-давай."
+    },
+    {
+        "quest": "man",
+        "marker": "0"
+    },
+    {
+        "variable-set": "friend_flag", "value": "1"
+    },
+    {
+        "return": "1"
+    },
+    {
+        "name": "Мужчина",
+        "text": "Ты уве-е-е-ерен?"
+    },
+    {
+        "switch": [
+            {
+                "variable": "name_tutorial_flag", "equal": "1", "jump": "3"
+            },
+            {
+                "variable": "name_tutorial_flag", "equal": "2", "jump": "5"
+            }
+        ],
+        "default-jump": "1"
+    },
+    {
+        "name": "Игрок",
+        "text": "Дыа-а-а."
+    },
+    {
+        "jump": "4"
+    },
+    {
+        "name": "[name_tutorial]",
+        "text": "Дыа-а-а."
+    },
+    {
+        "jump": "2"
+    },
+    {
+        "name": "Программист",
+        "text": "Дыа-а-а."
+    },
+    {
+        "name": "Мужчина",
+        "text": "То-о-очна?"
+    },
+    {
+        "switch": [
+            {
+                "variable": "name_tutorial_flag", "equal": "1", "jump": "3"
+            },
+            {
+                "variable": "name_tutorial_flag", "equal": "2", "jump": "5"
+            }
+        ],
+        "default-jump": "1"
+    },
+    {
+        "name": "Игрок",
+        "text": "Дыа-а-а-а-а-а."
+    },
+    {
+        "jump": "4"
+    },
+    {
+        "name": "[name_tutorial]",
+        "text": "Дыа-а-а-а-а-а."
+    },
+    {
+        "jump": "2"
+    },
+    {
+        "name": "Гопник-Программист",
+        "text": "Дыа-а-а-а-а-а."
+    },
+    {
+        "text": "И таким образом вы минут десять переговаривались с мужчиной."
+    },
+    {
+        "name": "Мужчина",
+        "text": "Слушай, ты классный чувак. Давай я тебя познакомлю с одним моим друганом."
+    },
+    {
+        "text": "Мужчина показывает на одну из дверей."
+    },
+    {
+        "quest": "friend",
+        "marker": "1"
+    },
+    {
+        "name": "Мужчина",
+        "text": "Вон тама мой друган. Тебе стоит с ним тоже поговарить. Хе-хех."
+    },
+    {
+        "quest": "man",
+        "marker": "0"
+    },
+    {
+        "variable-set": "friend_flag", "value": "1"
+    }
+]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/options.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/button_hover_theme.tres" type="StyleBox" id=2]
+[ext_resource path="res://fonts/button_theme.tres" type="StyleBox" id=3]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.764706, 0.764706, 0.764706, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0, 0, 0, 1 )
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[node name="Button" type="Button"]
+margin_right = 200.0
+margin_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 200, 50 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = ExtResource( 3 )
+text = "Текст"
